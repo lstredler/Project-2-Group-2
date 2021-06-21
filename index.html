@@ -27,6 +27,16 @@
     </div>
   </div>
 
+  <h2>State</h2>
+  <h5> Choose a state below to view the specific data</h5>
+  <select id="selDataset" onchange="getData(this.value)">
+      <option value="alabama">Alabama</option>
+      <option value="alaska">Alaska</option>
+      <option value="arizona">Arizona</option>
+  </select>
+
+  <div id="pie"></div>
+
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="app.js"></script>
