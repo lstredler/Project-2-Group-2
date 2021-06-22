@@ -2699,7 +2699,7 @@ var data = {
 
     },
 
-    "Maine" : {
+    Maine : {
       "date": "6/6/21",
       "total_vaccinations": 1509928,
       "total_distributed": 1805420,

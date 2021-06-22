@@ -1,7 +1,7 @@
-//state names 
-function init(){
-  d3.json("Data/state_vaccinations.json").then (data=>{
+function getPlots(data) {
+  d3.js("state_vaccinations.js").then (data=>{
     console.log(data)
+  
     var alabama = Object.values(data.alabama);
     var alaska = Object.values(data.alaska);
     var arizona = Object.values(data.arizona);
@@ -10,25 +10,26 @@ function init(){
     var colorado = Object.values(data.colorado);
     var connecticut = Object.values(data.connecticut);
     // Create an array of state variable info 
-    var state_data = Object.keys(data.alabama);
-    
-    var data = [{
-      values: alabama,
-      x: state_data,
-      y: state_data,
-      type: "bar"
-    }];
-    
-    var layout = {
-      height: 600,
-      width: 800
-    };
-    
-    Plotly.newPlot("bar", data, layout);
+    var labels = Object.keys(data.alabama);
+
+    function init() {
+      var data = [{
+        values: alabama,
+        labels: labels,
+        type: "pie"
+      }];
+
+      var layout = {
+        height: 600,
+        width: 800
+      };
+      Plotly.newPlot("pie", data, layout);
+    });
   }
 
 // On change to the DOM, call getData(
   d3.selectAll("#selDataset").on("change", getData);
+
   // Function called by DOM changes
   function getData() {
     var dropdownMenu = d3.select("#selDataset");
@@ -36,23 +37,22 @@ function init(){
     var dataset = dropdownMenu.property("value");
     // Initialize an empty array for the country's data
     var data = [];
-    if (dataset == 'alabama') {
-      data = alabama;
+  
+    if (dataset == 'Alabama') {
+        data = alabama;
     }
-    else if (dataset == 'alaska') {
-      data = alaska;
+    else if (dataset == 'Alaska') {
+        data = alaska;
     }
-    else if (dataset == 'arizona') {
-      data = arkansas;
-    }
-    else if (dataset == 'arkansas') {
-      data = arkansas;
+    else if (dataset == 'Arizona') {
+        data = arizona;
     }
     // Call function to update the chart
     updatePlotly(data);
-}
-// Update the restyled plot's values
-function updatePlotly(newdata) {
-  Plotly.restyle("bar", "values", [newdata]);
-}
-init();
+  }
+  
+  // Update the restyled plot's values
+  function updatePlotly(newdata) {
+    Plotly.restyle("bar", "values", [newdata]);
+  }
+  

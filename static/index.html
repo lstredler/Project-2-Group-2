@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Project 2</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="icon" href="data:;base64,=">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="icon" href="data:,">
+</head>
+
+<body>
+
+  <div  class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <h1>An Overview of State Covid-19 Vaccination and Distribution</h1>
+        <p>Use the interactive charts below to explore each state's COVID-19 vaccine statistics</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <div id="bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <h2>State Selection</h2>
+  <h6> Choose a state below to view the specific data</h6>
+  <select id="selDataset" onchange="getData(this.value)">
+      <option value="US">United States</option>
+      <option value="Alabama">Alabama</option>
+      <option value="Alaska">Alaska</option>
+      <option value="Arizona">Arizona</option>
+      <option value="Arkansas">Arkansas</option>
+      <option value="California">California</option>
+      <option value="Colorado">Colorado</option>
+      <option value="Connecticut">Connecticut</option>
+      <option value="Delaware">Delaware</option>
+      <option value="Gc">DC</option>
+      <option value="Glorida">Florida</option>
+      <option value="Georgia">Georgia</option>
+      <option value="Hawaii">Hawaii</option>
+      <option value="Idaho">Idaho</option>
+      <option value="Illinois">Illinois</option>
+      <option value="Indiana">Indiana </option>
+      <option value="Iowa">Iowa</option>
+      <option value="Kansas">Kansas</option>
+      <option value="Louisiana">Louisiana</option>
+      <option value="Maine">Maine</option>
+      <option value="Maryland ">Maryland </option>
+      <option value="Massachusetts">Massachusetts</option>
+      <option value="Michigan">Michigan</option>
+      <option value="Minnesota">Minnesota</option>
+      <option value="Mississippi">Mississippi</option>
+      <option value="Missouri"> Missouri</option>
+      <option value="Montana:"> Montana:</option>
+      <option value="Nebraska">Nebraska</option>
+      <option value="Nevada">Nevada</option>
+      <option value="New_Hampshire">New Hampshire</option>
+      <option value="New_Jersey">New Jersey</option>
+      <option value="New_Mexico">New Mexico</option>
+      <option value="New_York">New York</option>
+      <option value="North_Carolina">North Carolina</option>
+      <option value="North_Dakota">North Dakota</option>
+      <option value="Ohio">Ohio</option>
+      <option value="Oklahoma">Oklahoma</option>
+      <option value="Oregon">Oregon</option>
+      <option value="Pennsylvania">Pennsylvania</option>
+      <option value="Rhode_Island">Rhode Island</option>
+      <option value="South_Carolina">South Carolina</option>
+      <option value="South_Dakota">South Dakota</option>
+      <option value="Tennessee">Tennessee</option>
+      <option value="Texas">Texas</option>
+      <option value="Utah">Utah</option>
+      <option value="Vermont">Vermont</option>
+      <option value="Virginia">Virginia</option>
+      <option value="Washington">Washington</option>
+      <option value="West_Virginia">West Virginia</option>
+      <option value="Wisconsin">Wisconsin</option>
+      <option value="Wyoming">Wyoming/option>
+
+
+
+  </select>
+
+  <div id="bar"></div>
+
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="app.js"></script>
+  
+</body>
+
+</html>
