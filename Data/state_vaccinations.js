@@ -1,5 +1,5 @@
 var data = {
-    "Alabama": {
+    Alabama: {
       "date": "6/6/21",
       "total_vaccinations": 3035058,
       "total_distributed": 4637330,
@@ -141,7 +141,7 @@ var data = {
       "share_doses_used": 0.668
     },
     
-    "Alaska": {
+    Alaska: {
       "date": "6/6/21",
       "total_vaccinations": 621223,
       "total_distributed": 814795,
@@ -297,7 +297,7 @@ var data = {
       "share_doses_used": 0.769, 
     },
 
-    "Arizona": {
+    Arizona: {
       "date": "6/7/21",
       "total_vaccinations": 6090510,
       "total_distributed": 7893465,
@@ -425,7 +425,7 @@ var data = {
       "share_doses_used": 0.785   
     },
     
-    "Arkansas": {
+    Arkansas: {
       "date": "6/6/21",
       "total_vaccinations": 2111201,
       "total_distributed": 2793160,
@@ -567,7 +567,7 @@ var data = {
       "share_doses_used": 0.769
     },
     
-    "California": {
+    California: {
       "date": "6/6/21",
       "total_vaccinations": 39350625,
       "total_distributed": 47955210,
@@ -709,7 +709,7 @@ var data = {
       "share_doses_used": 0.842
     },
     
-    "Colorado": {
+    Colorado: {
       "date": "6/6/21",
       "total_vaccinations": 5719152,
       "total_distributed": 6857520,
@@ -851,7 +851,7 @@ var data = {
       "share_doses_used": 0.855
     },
     
-    "Connecticut": {
+    Connecticut: {
       "date": "6/6/21",
       "total_vaccinations": 4108136,
       "total_distributed": 4613575,
@@ -993,7 +993,7 @@ var data = {
       "share_doses_used": 0.913
     },
     
-    "Delaware": {
+    Delaware: {
       "date": "6/6/21",
       "total_vaccinations": 960980,
       "total_distributed": 1247985,
@@ -1135,7 +1135,7 @@ var data = {
       "share_doses_used": 0.787
     },
 
-    "District of Columbia": {
+    DC: {
       "date": "6/6/21",
       "total_vaccinations": 797796,
       "total_distributed": 1047935,
@@ -1277,7 +1277,7 @@ var data = {
       "share_doses_used": 0.785
     },
     
-    "Florida": {
+    Florida: {
       "date": "6/6/21",
       "total_vaccinations": 19159212,
       "total_distributed": 24056285,
@@ -1363,7 +1363,6 @@ var data = {
       "share_doses_used": 0.807,
    
       "date": "6/12/21",
-      "location": "Florida",
       "total_vaccinations": 19628896,
       "total_distributed": 24267785,
       "people_vaccinated": 10960053,
@@ -1420,7 +1419,7 @@ var data = {
       "share_doses_used": 0.823,
     },
     
-    "Georgia": {
+    Georgia: {
       "date": "6/6/21",
       "total_vaccinations": 7859494,
       "total_distributed": 10874215,
@@ -1563,7 +1562,7 @@ var data = {
       "share_doses_used": 0.726
     },
 
-    "Hawaii":{
+    Hawaii:{
       "date": "6/6/21",
       "total_vaccinations": 1609251,
       "total_distributed": 1872400,
@@ -1705,7 +1704,7 @@ var data = {
       "share_doses_used": 0.856
     },
 
-    "Idaho":{
+    Idaho:{
       "date": "6/6/21",
       "total_vaccinations": 1250775,
       "total_distributed": 1624395,
@@ -1847,7 +1846,7 @@ var data = {
       "share_doses_used": 0.782
   }, 
 
-  "Illinois":{
+  Illinois:{
       "date": "6/6/21",
       "total_vaccinations": 11841617,
       "total_distributed": 14350645,
@@ -1989,7 +1988,7 @@ var data = {
       "share_doses_used": 0.854
     },
   
-    "Indiana" : {
+    Indiana : {
       "date": "6/6/21",
       "total_vaccinations": 5204347,
       "total_distributed": 6509950,
@@ -2131,7 +2130,7 @@ var data = {
       "share_doses_used": 0.816,
     },
 
-    "Iowa": {
+    Iowa: {
       "date": "6/6/21",
       "total_vaccinations": 2886248,
       "total_distributed": 3362575,
@@ -2274,7 +2273,7 @@ var data = {
       
     },
 
-    "Kansas": {
+    Kansas: {
       "date": "6/6/21",
       "total_vaccinations": 2349395,
       "total_distributed": 3012415,
@@ -2557,7 +2556,7 @@ var data = {
 
     },
 
-    "Louisiana": {
+    Louisiana: {
       "date": "6/6/21",
       "total_vaccinations": 3124589,
       "total_distributed": 3952070,
@@ -2843,7 +2842,7 @@ var data = {
 
     },
 
-    "Maryland" : {
+    Maryland : {
       "date": "6/6/21",
       "total_vaccinations": 6279574,
       "total_distributed": 8173730,
@@ -2986,7 +2985,7 @@ var data = {
 
     },
 
-    "Massachusetts" : {
+    Massachusetts : {
       "date": "6/6/21",
       "total_vaccinations": 8282496,
       "total_distributed": 9481590,
@@ -3130,7 +3129,7 @@ var data = {
 
     },
 
-    "Michigan": {
+    Michigan: {
       "date": "6/6/21",
       "location": "Michigan",
       "total_vaccinations": 8811858,
@@ -3274,7 +3273,7 @@ var data = {
 
     },
 
-    "Minnesota":{
+    Minnesota:{
       "date": "6/6/21",
       "total_vaccinations": 5504994,
       "total_distributed": 6380580,
@@ -3416,7 +3415,7 @@ var data = {
       "share_doses_used": 0.877
     },
 
-    "Mississippi": {
+    Mississippi: {
       "date": "6/6/21",
       "total_vaccinations": 1790598,
       "total_distributed": 2615055,
@@ -3559,7 +3558,7 @@ var data = {
 
     },
 
-    "Missouri": {
+    Missouri: {
 
       "date": "6/6/21",
       "total_vaccinations": 4742062,
@@ -3703,7 +3702,7 @@ var data = {
 
     },
 
-    "Montana": {
+    Montana: {
       "date": "6/6/21",
       "total_vaccinations": 879235,
       "total_distributed": 1093285,
@@ -3846,7 +3845,7 @@ var data = {
 
     },
 
-    "Nebraska" : {
+    Nebraska : {
 
       "date": "6/6/21",
       "total_vaccinations": 1722639,
@@ -3990,7 +3989,7 @@ var data = {
 
     },
 
-    "Nevada": {
+    Nevada: {
       "date": "6/6/21",
       "total_vaccinations": 2545697,
       "total_distributed": 2955480,
@@ -4130,11 +4129,10 @@ var data = {
       "daily_vaccinations": 8533,
       "daily_vaccinations_per_million": 2770,
       "share_doses_used": 0.88
-      
-
+    
     },
 
-    "New Hampshire":{
+    New_Hampshire:{
       "date": "6/6/21",
       "total_vaccinations": 1419997,
       "total_distributed": 1763055,
@@ -4217,7 +4215,7 @@ var data = {
       "daily_vaccinations_raw": 7847,
       "daily_vaccinations": 7392,
       "daily_vaccinations_per_million": 5436,
-      "share_doses_used": 0.825
+      "share_doses_used": 0.825,
     
       "date": "6/12/21",
       "total_vaccinations": 1469474,
@@ -4277,7 +4275,7 @@ var data = {
 
     },
 
-    "New Jersey": {
+    New_Jersey: {
       "date": "6/6/21",
       "total_vaccinations": 9286153,
       "total_distributed": 11166665,
@@ -4420,7 +4418,7 @@ var data = {
 
     },
 
-    "New Mexico" : {
+    New_Mexico : {
       "date": "6/6/21",
       "total_vaccinations": 1903485,
       "total_distributed": 2305985,
@@ -4559,11 +4557,11 @@ var data = {
       "daily_vaccinations_raw": 9960,
       "daily_vaccinations": 6896,
       "daily_vaccinations_per_million": 3289,
-      "share_doses_used": 0.963,
+      "share_doses_used": 0.963
 
     },
 
-    "New York": {
+    New_York: {
       "date": "6/6/21",
       "total_vaccinations": 20014885,
       "total_distributed": 23065285,
@@ -4706,7 +4704,7 @@ var data = {
 
     },
 
-    "North Carolina":{
+    North_Carolina:{
 
       "date": "6/6/21",
       "total_vaccinations": 8248878,
@@ -4850,7 +4848,7 @@ var data = {
 
     },
 
-    "North Dakota": {
+    North_Dakota: {
       "date": "6/6/21",
       "total_vaccinations": 619359,
       "total_distributed": 695930,
@@ -4992,7 +4990,7 @@ var data = {
       "share_doses_used": 0.889
 
     },
-    "Ohio":{
+    Ohio:{
       "date": "6/6/21",
       "total_vaccinations": 10065745,
       "total_distributed": 12114305,
@@ -5135,7 +5133,7 @@ var data = {
 
     },
 
-    "Oklahoma": {
+    Oklahoma: {
       "date": "6/6/21",
       "total_vaccinations": 2986346,
       "total_distributed": 3959365,
@@ -5278,7 +5276,7 @@ var data = {
 
     },
 
-    "Oregon":{
+    Oregon:{
       "date": "6/6/21",
       "total_vaccinations": 4176332,
       "total_distributed": 5474205,
@@ -5420,7 +5418,7 @@ var data = {
       "share_doses_used": 0.784
     },
 
-    "Pennsylvania" : {
+    Pennsylvania : {
       "date": "6/6/21",
       "total_vaccinations": 12875076,
       "total_distributed": 15248525,
@@ -5563,7 +5561,7 @@ var data = {
 
     },
 
-    "Rhode Island": {
+    Rhode_Island: {
       "date": "6/6/21",
       "total_vaccinations": 1181302,
       "total_distributed": 1487085,
@@ -5706,7 +5704,7 @@ var data = {
 
     },
 
-    "South Carolina": {
+    South_Carolina: {
       "date": "6/6/21",
       "total_vaccinations": 3853999,
       "total_distributed": 5148805,
@@ -5849,7 +5847,7 @@ var data = {
 
     },
 
-    "South Dakota": {
+    South_Dakota: {
       "date": "6/6/21",
       "total_vaccinations": 783656,
       "total_distributed": 940665,
@@ -5992,7 +5990,7 @@ var data = {
 
     },
 
-    "Tennessee":{
+    Tennessee:{
       "date": "6/6/21",
       "total_vaccinations": 4907056,
       "total_distributed": 6162690,
@@ -6135,7 +6133,7 @@ var data = {
 
     },
 
-    "Texas": {
+    Texas: {
       "date": "6/6/21",
       "total_vaccinations": 23501684,
       "total_distributed": 30856235,
@@ -6278,7 +6276,7 @@ var data = {
 
     },
 
-    "United States": {
+    US: {
       "date": "6/6/21",
       "total_vaccinations": 301638578,
       "total_distributed": 371520735,
@@ -6421,7 +6419,7 @@ var data = {
 
     },
 
-    "Utah": {
+    Utah: {
       "date": "6/6/21",
       "total_vaccinations": 2618292,
       "total_distributed": 3154510,
@@ -6564,7 +6562,7 @@ var data = {
 
     },
 
-    "Vermont": {
+    Vermont: {
       "date": "6/6/21",
       "total_vaccinations": 793851,
       "total_distributed": 904700,
@@ -6707,7 +6705,7 @@ var data = {
 
     },
 
-    "Virginia": {
+    Virginia: {
       "date": "6/6/21",
       "total_vaccinations": 8554280,
       "total_distributed": 10019835,
@@ -6850,7 +6848,7 @@ var data = {
 
     },
 
-    "Washington":{
+    Washington:{
       "date": "6/6/21",
       "total_vaccinations": 7843092,
       "total_distributed": 9052760,
@@ -6992,7 +6990,7 @@ var data = {
       "share_doses_used": 0.887
     },
 
-    "West Virginia":{
+    West_Virginia:{
       "date": "6/6/21",
       "total_vaccinations": 1334641,
       "total_distributed": 1861135,
@@ -7134,7 +7132,7 @@ var data = {
       "share_doses_used": 0.732
     },
 
-    "Wisconsin":{
+    Wisconsin:{
       "date": "6/6/21",
       "total_vaccinations": 5563857,
       "total_distributed": 5984375,
@@ -7277,7 +7275,7 @@ var data = {
 
     },
 
-    "Wyoming":{
+    Wyoming:{
       "date": "6/6/21",
       "total_vaccinations": 400980,
       "total_distributed": 509135,
