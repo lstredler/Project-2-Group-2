@@ -1,4 +1,4 @@
-var data = {
+{
     "Alabama": {
       "date": "6/6/21",
       "total_vaccinations": 3035058,

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,7 +9,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="icon" href="data:;base64,=">
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
-  <link rel="icon" href="data:,">
+  <link rel="icon" href="data:">
 </head>
 
 <body>
@@ -29,7 +30,7 @@
 
   <h2>State Selection</h2>
   <h6> Choose a state below to view the specific data</h6>
-  <select id="selDataset" onchange="getData(this.value)">
+  <select data="selDataset" onchange="getData(this.value)">
       <option value="US">United States</option>
       <option value="Alabama">Alabama</option>
       <option value="Alaska">Alaska</option>
@@ -39,7 +40,7 @@
       <option value="Colorado">Colorado</option>
       <option value="Connecticut">Connecticut</option>
       <option value="Delaware">Delaware</option>
-      <option value="Gc">DC</option>
+      <option value="DC">DC</option>
       <option value="Glorida">Florida</option>
       <option value="Georgia">Georgia</option>
       <option value="Hawaii">Hawaii</option>
@@ -56,7 +57,7 @@
       <option value="Minnesota">Minnesota</option>
       <option value="Mississippi">Mississippi</option>
       <option value="Missouri"> Missouri</option>
-      <option value="Montana:"> Montana:</option>
+      <option value="Montana"> Montana:</option>
       <option value="Nebraska">Nebraska</option>
       <option value="Nevada">Nevada</option>
       <option value="New_Hampshire">New Hampshire</option>
@@ -80,9 +81,7 @@
       <option value="Washington">Washington</option>
       <option value="West_Virginia">West Virginia</option>
       <option value="Wisconsin">Wisconsin</option>
-      <option value="Wyoming">Wyoming/option>
-
-
+      <option value="Wyoming">Wyoming</option>
 
   </select>
 
@@ -90,7 +89,9 @@
 
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="app.js"></script>
+  <script src="state_vaccinations.js"></script>
+  <script src="test.js"></script>
+
   
 </body>
 
