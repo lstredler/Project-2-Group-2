@@ -48,7 +48,7 @@ function getPlots(data) {
       var state_rank_chart = state_rank.map(d => "STATES" + d);
       console.log(`people_vaccinated: ${people_vaccinated}`)
   
-      //BAR CHART //
+      //BAR CHART TOP 10//
       var state_labels = data.total_vacs.slice(0,50);
       console.log(`data: ${data}`)
       var trace1 = {
