@@ -1,5 +1,21 @@
 d3.csv("updated_state_vaccinations.csv").then (data=>{
   console.log(data)
+
+  var states=data.states;
+  console.log(states)
+
+  var total_vaccinations = data.total_vaccinations;
+  console.log(total_vaccinations);
+
+  var total_distributed = data.total_distributed;
+  console.log(total_distributed);
+  
+  var people_vaccinated = data.people_vaccinated
+  console.log(people_vaccinated);
+
+  var people_fully_vaccinated_per_hundred = data.people_fully_vaccinated_per_hundred
+  console.log(people_fully_vaccinated_per_hundred);
+  
 });
 
 //CREATE BAR CHART STATES WITH MOST VACCINATIONS ADMINISTERED 
@@ -75,57 +91,64 @@ var layout2 = {
     b:70
   }
 };
+
 Plotly.newPlot("plot2", data, layout2);
 
+var trace3={
+  type = 'table',
+  header = list(
+    values = c("<b>Cars</b>", names(mtcars)),
+  align = c('left', rep('center', ncol(mtcars))),
+  line = list(width = 1, color = 'black'),
+  fill = list(color = 'rgb(235, 100, 230)'),
+  font = list(family = "Arial", size = 14, color = "white")
+  ),
+  cells = list(
+    values = rbind(
+      rownames(mtcars), 
+      t(as.matrix(unname(mtcars)))
+    ),
+    align = c('left', rep('center', ncol(mtcars))),
+    line = list(color = "black", width = 1),
+    fill = list(color = c('rgb(235, 193, 238)', 'rgba(228, 222, 249, 0.65)')),
+    font = list(family = "Arial", size = 12, color = c("black"))
+  ))
+
+}
 
 
-function getDemoInfo(data) {
-  // read json file 
-      d3.csv("updated_state_vaccinations.csv").then((data)=> {
-  //  metadata for demographic panel
-          var statedata = data;
-  
-          console.log(data)
-  
-        // filter by state
-         var result = data.filter(data => data.variables.toString() === variables)[0];
-        // select demo panel
-         var stateInfo = d3.select("#data");
-          
-       // empty demo panel 
-         stateInfo.html("");
-  
-       // grab demo data, append to panel
-          Object.entries(result).forEach((key) => {   
-              stateInfo.append("h5").text(key[0].toUpperCase() + ": " + key[1] + "\n");    
-          });
-      });
+
+Plotly.newPlot("table", data, fig);
+
+
+d3.selectAll("#selDataset").on("change", getData);
+
+// Function called by DOM changes
+function getData() {
+  var dropdownMenu = d3.select("#selDataset");
+  // Assign the value of the dropdown menu option to a variable
+  var dataset = dropdownMenu.property("value");
+  // Initialize an empty array for the country's data
+  var data = [];
+
+  if (dataset == 'Alabama') {
+      data = alabama;
   }
-  // create change event function 
-  function optionChanged(id) {
-      getPlots(id);
-      getDemoInfo(id);
+  else if (dataset == 'Alaska') {
+      data = alaska;
   }
+  else if (dataset == 'Arizona') {
+      data = arizona;
+  }
+  // Call function to update the chart
+  updatePlotly(data);
+}
 
-// create initial data rendering function 
-function init() {
-  // dropdown menu 
-  var dropdown = d3.select("#selDataset");
-
-  // read the data 
-  d3.csv("updated_state_vaccinations.csv").then((data)=> {
-      console.log(data)
-
-      // id data to dropdown menu 
-      data.states.forEach(function(state) {
-          dropdown.append("option").text(state).property("value");
-      });
-
-      // display data and plots to page 
-      getPlots(data.state[0]);
-      getDemoInfo(data.state[0]);
-  });
+// Update the restyled plot's values
+function updatePlotly(newdata) {
+  Plotly.restyle("table", "values", [newdata]);
 }
 
 init();
+
     
