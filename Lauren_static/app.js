@@ -94,33 +94,8 @@ var layout2 = {
 
 Plotly.newPlot("plot2", data, layout2);
 
-var trace3={
-  type = 'table',
-  header = list(
-    values = c("<b>Cars</b>", names(mtcars)),
-  align = c('left', rep('center', ncol(mtcars))),
-  line = list(width = 1, color = 'black'),
-  fill = list(color = 'rgb(235, 100, 230)'),
-  font = list(family = "Arial", size = 14, color = "white")
-  ),
-  cells = list(
-    values = rbind(
-      rownames(mtcars), 
-      t(as.matrix(unname(mtcars)))
-    ),
-    align = c('left', rep('center', ncol(mtcars))),
-    line = list(color = "black", width = 1),
-    fill = list(color = c('rgb(235, 193, 238)', 'rgba(228, 222, 249, 0.65)')),
-    font = list(family = "Arial", size = 12, color = c("black"))
-  ))
 
-}
-
-
-
-Plotly.newPlot("table", data, fig);
-
-
+// Function called by DOM changes
 d3.selectAll("#selDataset").on("change", getData);
 
 // Function called by DOM changes
@@ -131,14 +106,14 @@ function getData() {
   // Initialize an empty array for the country's data
   var data = [];
 
-  if (dataset == 'Alabama') {
+  if (dataset == 'alabama') {
       data = alabama;
   }
-  else if (dataset == 'Alaska') {
-      data = alaska;
-  }
-  else if (dataset == 'Arizona') {
+  else if (dataset == 'arizona') {
       data = arizona;
+  }
+  else if (dataset == 'alaska') {
+      data = alaska;
   }
   // Call function to update the chart
   updatePlotly(data);
@@ -146,9 +121,10 @@ function getData() {
 
 // Update the restyled plot's values
 function updatePlotly(newdata) {
-  Plotly.restyle("table", "values", [newdata]);
+  Plotly.restyle("bar", "values", [newdata]);
 }
 
 init();
+
 
     
