@@ -236,55 +236,6 @@ geojson = L.geoJson(statesData, {
   }
 }).addTo(myMap);
 
-////DROPDOWN MENU////////////////////////////
-
-
-
-d3.csv("updated_state_vaccinations.csv").then (sampledata=>{
-  console.log(sampledata)
-  var filterdata = sampledata.filter(data => data.STATE===state);
-
-
-  ////create table////////////////////////////////
-  
-  var tbody = d3.select("tbody");
-  console.log(data);
-
-  data.forEach((weatherReport) => {
-    var row = tbody.append("tr");
-    Object.entries(weatherReport).forEach(([key, value]) => {
-      var cell = row.append("td");
-      cell.text(value);
-    });
-  });
-//////////////////////////////////
-
-
-// On change to the DOM, call getData()
-d3.selectAll("#selDataset").on("change", getData);
-
-// Function called by DOM changes
-function getData() {
-  var dropdownMenu = d3.select("#selDataset");
-  // Assign the value of the dropdown menu option to a variable
-  var state = dropdownMenu.property("value");
-
-  
-
-
-  // Initialize an empty array for the country's data
-  var data = [];
-
-  // Call function to update the chart
-  updatePlotly(filterdata);
-}
-
-// Update the restyled plot's values
-function updatePlotly(newdata) {
-  Plotly.restyle("table", "values", [newdata]);
-}
-
-init();
 
 
 
