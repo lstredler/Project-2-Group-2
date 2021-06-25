@@ -236,42 +236,29 @@ geojson = L.geoJson(statesData, {
   }
 }).addTo(myMap);
 
-////DROPDOWN MENU///
-
-// Create an array of each state
-var Alabama = Object.values(data.Alabama);
-var Alaska = Object.values(data.Alaska);
-var Arizona = Object.values(data.Arizona);
-
-// Create an array of music provider labels
-var labels = Object.keys(data.Alabama);
-
-// Display the default plot
-function init() {
-  var data = [{
-    values: Alabama,
-    labels: labels,
-    type:"table",
-  }];
-
-    header = list(
-      values = (State,Value),
-      align = c("center", "center"),
-      line = list(width = 1, color = 'black'),
-      fill = list(color = c("grey", "grey")),
-      font = list(family = "Arial", size = 14, color = "white")
-    ),
-    cells = list(
-      values = rbind(data),
-      align = c("center", "center"),
-      line = list(color = "black", width = 1),
-      font = list(family = "Arial", size = 12, color = c("black"))
-    )
+////DROPDOWN MENU////////////////////////////
 
 
 
-  Plotly.newPlot("table", data, header,cells);
-}
+d3.csv("updated_state_vaccinations.csv").then (sampledata=>{
+  console.log(sampledata)
+  var filterdata = sampledata.filter(data => data.STATE===state);
+
+
+  ////create table////////////////////////////////
+  
+  var tbody = d3.select("tbody");
+  console.log(data);
+
+  data.forEach((weatherReport) => {
+    var row = tbody.append("tr");
+    Object.entries(weatherReport).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+    });
+  });
+//////////////////////////////////
+
 
 // On change to the DOM, call getData()
 d3.selectAll("#selDataset").on("change", getData);
@@ -280,21 +267,16 @@ d3.selectAll("#selDataset").on("change", getData);
 function getData() {
   var dropdownMenu = d3.select("#selDataset");
   // Assign the value of the dropdown menu option to a variable
-  var dataset = dropdownMenu.property("value");
+  var state = dropdownMenu.property("value");
+
+  
+
+
   // Initialize an empty array for the country's data
   var data = [];
 
-  if (dataset == 'alabama') {
-      data = alabama;
-  }
-  else if (dataset == 'alaska') {
-      data = alaska;
-  }
-  else if (dataset == 'arizona') {
-      data = arizona;
-  }
   // Call function to update the chart
-  updatePlotly(data);
+  updatePlotly(filterdata);
 }
 
 // Update the restyled plot's values
