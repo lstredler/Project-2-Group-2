@@ -1,18 +1,11 @@
 /* remove default margin and padding from body */
-body {
-  padding: 0;
-  margin: 0;
-  background-color: rgb(107, 192, 248);
-
-}
-
 h1 {
   /* Put a 15-pixel margin at the bottom of the heading. */
   margin-bottom: 5px;
   /* Change the size of your font to 60 pixels high. */
   font-size: 60px;
   /* This will color the heading font white. */
-  color: rgb(8, 8, 8);
+  color: rgb(0, 0, 0);
   /* Align the text to the center of its enclosing element (e.g. div). */
   text-align: center;
   /* The background of the heading element will now be black. */
@@ -34,8 +27,8 @@ img {
   /* set map, body, and html to 100% of the screen size */
   #map{
     height: 1000px;
-    width: 1050px;
-    margin-left: 200px;
+    width: 1000px;
+    margin-left:10px;
 
   }
   body,
@@ -59,16 +52,25 @@ img {
     margin-right: 8px;
     opacity: 0.7;
   }
+    /* plot placement  */
 
-  #plot4{
-    margin-left: 200px;
+  #plot1{
+    margin-left: 100px;
   }
-
+  #plot2{
+    margin-left: 100px;
+  }
+  #plot3{
+    margin-left: 100px;
+  }
+  #plot4{
+    margin-left: 100px;
+  }
   #scatter-plot{
     margin-left: 100px;
   }
-
   #bar-plot5{
     margin-left: 100px;
   }
+  
 

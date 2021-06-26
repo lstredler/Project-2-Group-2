@@ -45,7 +45,7 @@ var trace2 = {
 
   mode: "markers",
   marker:{
-    color: 'red'},
+    color: ('red')},
     type: "bar",
   };
     
