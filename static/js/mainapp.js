@@ -340,6 +340,70 @@ geojson = L.geoJson(statesData, {
 
 ////////DROP DOWN MENU AND STATE SELECTION///////////////////////////////////
 
+var stateinfo = ["Alabama", 4903185, 3291351,23099];
+
+// Use D3 to select the table
+var table = d3.select("table");
+
+// Use d3 to create a bootstrap striped table
+// http://getbootstrap.com/docs/3.3/css/#tables-striped
+table.attr("class", "table table-striped");
+
+// Use D3 to select the table body
+var tbody = d3.select("tbody");
+
+// Append one table row `tr` to the table body
+var row = tbody.append("tr");
+
+// Append one cell for the student name
+row.append("td").text(state[0]);
+
+
+
+/////////////////////////////////
+
+
+function optionChanged() {
+  var state = d3.select("#selDataset0").node().value;
+  console.log(state)
+  buildPlot(state);
+};
+
+function getInfo (state){
+  d3.csv("updated_state_vaccinations.csv").then(function(data){
+    console.log(data);
+    let state_name=data.map(d=> d.state_name);
+    let state = []
+    state.forEach(element =>{
+      if(!state_name.includes(element)){
+        state_name.push(element)
+      }
+      else if (state_name.includes(element)){
+        console.log('skip')
+      }
+    })
+    let selector = d3.select("#selData");
+    selector.append("option").text("Alabama");
+    state_name.forEach((i)=>{
+      let option = selector.append("option");
+      option.text(i);
+    });
+
+    let FilteredData=states.filter(d => data.state_name === "Alabama");
+    let population= FilteredData.map(d=>d.POPESTIMATE2019);
+    let total_vaccinations = FilteredData.map(d=>d.people_fully_vaccinated_per_hundred);
+    let daily_vaccinations=FilteredData.map(d=>d.daily_vaccinations_per_million);
+  })
+}
+
+var tbody = d3.select("tbody");
+data.forEach((STATE) => {
+  var row = tbody.append("tr");
+  Object.entries(STATE).forEach(([key, value]) => {
+    var cell = row.append("td");
+    cell.text(value);
+  });
+});
 
 // ////DROPDOWN MENU////////////////////////////
 
@@ -350,16 +414,7 @@ geojson = L.geoJson(statesData, {
 
 //   ////create table////////////////////////////////
   
-//   var tbody = d3.select("tbody");
-//   console.log(data);
 
-//   data.forEach((weatherReport) => {
-//     var row = tbody.append("tr");
-//     Object.entries(weatherReport).forEach(([key, value]) => {
-//       var cell = row.append("td");
-//       cell.text(value);
-//     });
-//   });
 // //////////////////////////////////
 
 
