@@ -1,12 +1,13 @@
 //CREATE BAR CHART STATES WITH MOST VACCINATIONS ADMINISTERED 
 
+//////BAR CHART 1
 var trace1 = {
-  x: ["California", "Texas", "Florida", "Pennsylvania","Illinois",
-  "New Jersey", "Ohio", "Michigan", "Virginia","Massachusetts"],
-  y: [23787425, 13733578, 11302856, 7934904,7397909,5697232,5582498,5084444,4974473,4799195],
+  x: ["California", "Texas", "New York", "Florida", "Pennsylvania","Illinois", "Ohio", "New Jersey", 
+  "Michigan", "Virginia"],
+  y: [41639567, 25095675, 21301120,20516373, 13651077, 12629554, 10519985, 9949593, 9285546, 9057681,9285546,9057681],
   mode: "markers",
   marker:{
-    color: 'purple'},
+    color: 'green'},
     type: "bar",
   };
     
@@ -36,22 +37,22 @@ var layout1 = {
 
 Plotly.newPlot("plot1", data, layout1);
 
-//CREATE BAR CHART STATES WITH STATES WITH MOST VACCINES PER HUNDRED
+//////BAR CHART 2
 
 var trace2 = {
-  x: ["Vermont", "Maine", "Massachusetts", "Connecticut","Rhode Island",
-  "New Jersey", "New Hampshire", "Maryland", "Washington","New Mexico"],
-  y: [64.45, 60.24, 60.1, 59.11,57.41,54.93,54.87,54.01,52.93,52.5],
+  x: ["Idaho","Rhode Island","Delaware","Montana","DC","Vermont","South Dakota","Alaska","North Dakota","Wyoming",],
+  y: [1303710,1252559,1011994, 921925,845387,840948,809311,641457,635417,414810],
+
   mode: "markers",
   marker:{
-    color: 'blue'},
+    color: 'red'},
     type: "bar",
   };
     
 var data = [trace2];
 
 var layout2 = {
-  title: "Top 10 Rank: Percentage of People Fully Vaccinated in State",
+  title: "States With Lowest # of Vaccines Administered",
   font:{
     family: "Raleway, sans-serif"
   },
@@ -74,6 +75,83 @@ var layout2 = {
 
 Plotly.newPlot("plot2", data, layout2);
 
+//////CHART 3
+
+
+//CREATE BAR CHART STATES WITH STATES WITH MOST VACCINES PER HUNDRED
+
+var trace3 = {
+  x: ["Vermont", "Maine", "Massachusetts", "Connecticut","Rhode Island",
+  "New Jersey", "New Hampshire", "Maryland", "Washington","New Mexico"],
+  y: [64.45, 60.24, 60.1, 59.11,57.41,54.93,54.87,54.01,52.93,52.5],
+  mode: "markers",
+  marker:{
+    color: 'green'},
+    type: "bar",
+  };
+    
+var data = [trace3];
+
+var layout3 = {
+  title: "Top 10 Rank: Percentage of People Fully Vaccinated in State",
+  font:{
+    family: "Raleway, sans-serif"
+  },
+  showlegend: false,
+  xaxis:{
+    tickangle:-45
+  },
+  yaxis:{
+    zeroline:false,
+    gridwidth:2
+  },
+  bargap:0.05,
+  margin:{
+    l:100,
+    r:50,
+    t:100,        
+    b:70
+  }
+};
+
+Plotly.newPlot("plot3", data, layout3);
+
+//////CHART 4
+
+var trace4 = {
+  x: ["West Virginia", "Utah","Georgia","Idaho","Tennessee","Louisiana","Wyoming","Arkansas","Alabama","Mississippi"],
+  y: [36.55,36.49,35.42,35.31,34.57,33.84,33.84,33.41,31.96,29.13],
+  mode: "markers",
+  marker:{
+    color: 'red'},
+    type: "bar",
+  };
+    
+var data = [trace4];
+
+var layout4 = {
+  title: "Lowest 10 Rank: Percentage of People Fully Vaccinated in State",
+  font:{
+    family: "Raleway, sans-serif"
+  },
+  showlegend: false,
+  xaxis:{
+    tickangle:-45
+  },
+  yaxis:{
+    zeroline:false,
+    gridwidth:2
+  },
+  bargap:0.05,
+  margin:{
+    l:100,
+    r:50,
+    t:100,        
+    b:70
+  }
+};
+
+Plotly.newPlot("plot4", data, layout4);
 
 /////DOMENIC/////
 var state = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
@@ -92,13 +170,13 @@ var vaxx_admin = [69.16, 77.45, 79.36, 77.79, 85.53, 86.87, 92.43, 79.82, 80.18,
                     95.34, 80.86]
 
 // Create the Trace
-var trace3 = {
+var trace4 = {
     x: state,
     y: vaxx_admin,
   };
   
   // Create the data array for the plot
-  var data = [trace3];
+  var data = [trace4];
 
 var data = [{
   type: 'scatter',
@@ -116,7 +194,7 @@ var data = [{
   }]
 }]
 
-var layout3 = {
+var layout4 = {
     title: "Percentage of Vaccines Administered by State",
     xaxis: { 
       title: "State", 
@@ -125,7 +203,7 @@ var layout3 = {
     yaxis: { title: "Percentage of Administered Vaccines" }
   };
 
-  Plotly.newPlot("scatter-plot", data, layout3);
+  Plotly.newPlot("scatter-plot", data, layout4);
 
 
   //////BAR GRAPH - TOP 10 STATES BY PERCENT ADMINISTERED///////
@@ -147,7 +225,7 @@ var layout3 = {
       yaxis: { title: "Percentage of Administered Vaccines" }
     };
   
-    Plotly.newPlot("bar-plot", data, layout);
+    Plotly.newPlot("bar-plot5", data, layout);
 
 
 
@@ -263,53 +341,53 @@ geojson = L.geoJson(statesData, {
 ////////DROP DOWN MENU AND STATE SELECTION///////////////////////////////////
 
 
-////DROPDOWN MENU////////////////////////////
+// ////DROPDOWN MENU////////////////////////////
 
-d3.csv("updated_state_vaccinations.csv").then (sampledata=>{
-  console.log(sampledata)
-  var filterdata = sampledata.filter(data => data.STATE===state);
+// d3.csv("updated_state_vaccinations.csv").then (sampledata=>{
+//   console.log(sampledata)
+//   var filterdata = sampledata.filter(data => data.STATE===state);
 
 
-  ////create table////////////////////////////////
+//   ////create table////////////////////////////////
   
-  var tbody = d3.select("tbody");
-  console.log(data);
+//   var tbody = d3.select("tbody");
+//   console.log(data);
 
-  data.forEach((weatherReport) => {
-    var row = tbody.append("tr");
-    Object.entries(weatherReport).forEach(([key, value]) => {
-      var cell = row.append("td");
-      cell.text(value);
-    });
-  });
-//////////////////////////////////
+//   data.forEach((weatherReport) => {
+//     var row = tbody.append("tr");
+//     Object.entries(weatherReport).forEach(([key, value]) => {
+//       var cell = row.append("td");
+//       cell.text(value);
+//     });
+//   });
+// //////////////////////////////////
 
 
-// On change to the DOM, call getData()
-d3.selectAll("#selDataset").on("change", getData);
+// // On change to the DOM, call getData()
+// d3.selectAll("#selDataset").on("change", getData);
 
-// Function called by DOM changes
-function getData() {
-  var dropdownMenu = d3.select("#selDataset");
-  // Assign the value of the dropdown menu option to a variable
-  var state = dropdownMenu.property("value");
+// // Function called by DOM changes
+// function getData() {
+//   var dropdownMenu = d3.select("#selDataset");
+//   // Assign the value of the dropdown menu option to a variable
+//   var state = dropdownMenu.property("value");
 
   
 
 
-  // Initialize an empty array for the country's data
-  var data = [];
+//   // Initialize an empty array for the country's data
+//   var data = [];
 
-  // Call function to update the chart
-  updatePlotly(filterdata);
-}
+//   // Call function to update the chart
+//   updatePlotly(filterdata);
+// }
 
-// Update the restyled plot's values
-function updatePlotly(newdata) {
-  Plotly.restyle("table", "values", [newdata]);
-}
+// // Update the restyled plot's values
+// function updatePlotly(newdata) {
+//   Plotly.restyle("table", "values", [newdata]);
+// }
 
-init();
+// init();
 
 // function getPlots(data) {
 

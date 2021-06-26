@@ -2,17 +2,29 @@
 body {
     padding: 0;
     margin: 0;
+    background-color: rgb(107, 192, 248);
+
   }
+
+  .header {
+    height: 200px;
+    padding-top: 20px;
+    background: #bd2020a4;
+  }
+  
   
   /* set map, body, and html to 100% of the screen size */
   #map{
     height: 1000px;
-    width: 1000px;
+    width: 1050px;
+    margin-left: 200px;
+
   }
   body,
   html {
     height: 100%;
   }
+  
   
   .legend {
     line-height: 25px;
@@ -28,4 +40,16 @@ body {
     float: left;
     margin-right: 8px;
     opacity: 0.7;
+  }
+
+  #plot4{
+    margin-left: 200px;
+  }
+
+  #scatter-plot{
+    margin-left: 100px;
+  }
+
+  #bar-plot5{
+    margin-left: 100px;
   }
