@@ -38,19 +38,6 @@ request.send();
 
 /////////////////append data/////////////
 
-var tbody = d3.select("tbody");
-
-// Console.log the weather data from data.js
-console.log(data);
-
-document.forEach((option) => {
-  var row = tbody.append("tr");
-  Object.entries(option).forEach(([key, value]) => {
-    var cell = row.append("td");
-    cell.text(value);
-  });
-});
-
 
 
 //CREATE PLOTS////////////////////////////////// 
