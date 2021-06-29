@@ -12,7 +12,7 @@ var trace1 = {
 var data = [trace1];
 
 var layout1 = {
-  title: "States With Highest # of Vaccines Administered",
+  title: "Highest 10 Rank: Vaccines Administered (by Count)",
   font:{
     family: "Raleway, sans-serif"
   },
@@ -33,6 +33,7 @@ var layout1 = {
   }
 };
 
+
 Plotly.newPlot("plot1", data, layout1);
 
 //////BAR CHART 2
@@ -50,7 +51,7 @@ var trace2 = {
 var data = [trace2];
 
 var layout2 = {
-  title: "States With Lowest # of Vaccines Administered",
+  title: "Lowest 10 Rank: Vaccines Administered (by Count)",
   font:{
     family: "Raleway, sans-serif"
   },
@@ -91,7 +92,7 @@ var trace3 = {
 var data = [trace3];
 
 var layout3 = {
-  title: "Top 10 Rank: Percentage of People Fully Vaccinated in State",
+  title: "Highest 10 Rank: Vaccines Administered (by Percentage of State Population)",
   font:{
     family: "Raleway, sans-serif"
   },
@@ -128,7 +129,7 @@ var trace4 = {
 var data = [trace4];
 
 var layout4 = {
-  title: "Lowest 10 Rank: Percentage of People Fully Vaccinated in State",
+  title: "Lowest 10 Rank: Vaccines Administered (by Percentage of State Population)",
   font:{
     family: "Raleway, sans-serif"
   },
@@ -193,7 +194,7 @@ var data = [{
 }]
 
 var layout4 = {
-    title: "Percentage of Vaccines Administered by State",
+    title: "Percentage of Vaccines Administered by State in Respect to Distribution",
     xaxis: { 
       title: "State", 
     tickangle:-45
@@ -218,7 +219,7 @@ var layout4 = {
   
   
   var layout = {
-      title: "Top 10 Most Vaccinated States",
+      title: "Top 10: Percentage of Vaccines Administered by State in Respect to Distribution",
       xaxis: { title: "State" },
       yaxis: { title: "Percentage of Administered Vaccines" }
     };
