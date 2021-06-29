@@ -226,6 +226,102 @@ var layout4 = {
     Plotly.newPlot("bar-plot6", data, layout);
 
 
+////////LINE CHARTS////////////
+
+
+var trace1 = {
+  x:["Jan 5", "Jan 12", "Jan 19", "Jan 26", "Feb 2 ", "Feb 9", "Feb 16","Feb 23 ","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6", "Apr 13", "Apr 20", "Apr 27", "May 4", "May 11", "May 18", "May 25", "Jun 1", "Jun 8", "Jun 15", "Jun 22"],
+  y: [0.0, 0.3, 0.8, 1.3, 2.3, 3.7, 5.5, 7.2, 9.3, 11.2, 13.6, 15.8, 18.4, 21.4, 25.1, 28.5, 31.7, 34.5, 37.6, 39.9, 41.8, 43.1, 44.5, 46.1, 47.4],
+  mode: 'lines',
+  name: 'Female'
+};
+var trace2 = {
+  x: ["Jan 5", "Jan 12", "Jan 19", "Jan 26", "Feb 2 ", "Feb 9", "Feb 16","Feb 23 ","Mar 2","Mar 9","Mar 16","Mar 23","Mar 30","Apr 6", "Apr 13", "Apr 20", "Apr 27", "May 4", "May 11", "May 18", "May 25", "Jun 1", "Jun 8", "Jun 15", "Jun 22"],
+  y: [0.0, 0.2, 0.4, 0.7, 1.3, 2.1, 3.4, 4.7, 6.4, 8.0, 10.0, 11.8, 14.0, 16.6, 20.2, 23.4, 26.6, 29.5, 32.7, 35.2, 37.7, 38.9, 40.3, 41.9, 43.3],
+  mode: 'lines',
+  name: 'Male'
+};
+var layout4 = {
+  title: 'People Fully Vaccinated by Gender',
+  xaxis: {
+    title: 'Date',
+    showgrid: false,
+    zeroline: false
+  },
+  yaxis: {
+    title: 'Percent Vaccinated',
+    showline: false
+  }
+};
+var data = [trace1, trace2];
+Plotly.newPlot('myDiv', data, layout4);
+
+
+////////LINE CHART/////////////////
+var trace1 = {
+  x:["Jan 5", "Jan 19", "Feb 2", "Feb 16", "Mar 2", "Mar 16", "Mar 30", "Apr 13", "Apr 27", "May 11", "May 25", "Jun 8", "Jun 22"],
+  y: [ 0.0, 0.3, 2.3, 12.3, 28.4, 43.1, 54.0, 62.7, 67.5, 70.6, 72.6, 74.0, 75.2],
+  mode: 'lines',
+  name: '75+'
+};
+var trace2 = {
+  x: ["Jan 5", "Jan 19", "Feb 2", "Feb 16", "Mar 2", "Mar 16", "Mar 30", "Apr 13", "Apr 27", "May 11", "May 25", "Jun 8", "Jun 22"],
+  y: [0.0, 0.4, 1.8, 7.6, 17.9, 32.2, 47.3, 60.9, 68.1, 72.5, 75.3, 77.1, 78.8],
+  mode: 'lines',
+  name: '65-74'
+};
+var trace3 = {
+  x:["Jan 5", "Jan 19", "Feb 2", "Feb 16", "Mar 2", "Mar 16", "Mar 30", "Apr 13", "Apr 27", "May 11", "May 25", "Jun 8", "Jun 22"],
+  y: [ 0.0, 1.0, 2.8, 5.6, 8.2, 12.0, 17.4, 28.8, 41.7, 51.0, 56.8, 60.1, 62.9],
+  mode: 'lines',
+  name: '50-64'
+};
+var trace4 = {
+  x: ["Jan 5", "Jan 19", "Feb 2", "Feb 16", "Mar 2", "Mar 16", "Mar 30", "Apr 13", "Apr 27", "May 11", "May 25", "Jun 8", "Jun 22"],
+  y: [0.0, 1.1, 3.0, 5.7, 7.9, 10.6, 14.2, 21.3, 30.3, 39.2, 45.8, 49.5, 52.8],
+  mode: 'lines',
+  name: '40-49'
+};
+var trace5 = {
+  x:["Jan 5", "Jan 19", "Feb 2", "Feb 16", "Mar 2", "Mar 16", "Mar 30", "Apr 13", "Apr 27", "May 11", "May 25", "Jun 8", "Jun 22"],
+  y: [ 0.0, 1.1, 2.6, 4.8, 6.6, 8.5, 11.1, 16.5, 23.1, 30.9, 37.0, 40.5, 43.7],
+  mode: 'lines',
+  name: '25-39'
+};
+var trace6 = {
+  x: ["Jan 5", "Jan 19", "Feb 2", "Feb 16", "Mar 2", "Mar 16", "Mar 30", "Apr 13", "Apr 27", "May 11", "May 25", "Jun 8", "Jun 22"],
+  y: [0.0, 0.3, 0.9, 2.0, 3.0, 4.2, 5.8, 9.8, 15.2, 23.1, 29.7, 33.8, 37.7],
+  mode: 'lines',
+  name: '18-24'
+};
+var trace7 = {
+  x:["Jan 5", "Jan 19", "Feb 2", "Feb 16", "Mar 2", "Mar 16", "Mar 30", "Apr 13", "Apr 27", "May 11", "May 25", "Jun 8", "Jun 22"],
+  y: [ 0.0, 0.0, 0.0, 0.1, 0.3, 0.5, 0.8, 1.9, 5.2, 13.5, 21.8, 26.7, 32.2],
+  mode: 'lines',
+  name: '16-17'
+};
+var trace8 = {
+  x: ["Jan 5", "Jan 19", "Feb 2", "Feb 16", "Mar 2", "Mar 16", "Mar 30", "Apr 13", "Apr 27", "May 11", "May 25", "Jun 8", "Jun 22"],
+  y: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.3, 0.6, 5.5, 18.2],
+  mode: 'lines',
+  name: '12-15'
+};
+var layout5 = {
+  title: 'People Fully Vaccinated by Age Group',
+  xaxis: {
+    title: 'Date',
+    showgrid: false,
+    zeroline: false
+  },
+  yaxis: {
+    title: 'Percent Vaccinated',
+    showline: false
+  }
+};
+var data = [trace1, trace2, trace3, trace4, trace5, trace6, trace7, trace8];
+Plotly.newPlot('myDiv2', data, layout5);
+
+
 
 //////THOMAS MAP /////////////////////////
 
@@ -338,16 +434,10 @@ geojson = L.geoJson(statesData, {
 
 
 
-////APPEND DATA TO A TABLE////////////
-
-
-
 
 // ////DROPDOWN MENU////////////////////////////
 
-// d3.csv("updated_state_vaccinations.csv").then (sampledata=>{
-//   console.log(sampledata)
-//   var filterdata = sampledata.filter(data => data.STATE===state);
+
 
 
 //   ////create table////////////////////////////////
