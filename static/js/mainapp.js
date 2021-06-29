@@ -1,4 +1,59 @@
-//CREATE BAR CHART STATES WITH MOST VACCINATIONS ADMINISTERED 
+////CREATE THE DROP DOWN MENU with the STATE NAMES by reading in csv////////////////////////
+let dropdown = document.getElementById('locality-dropdown');
+dropdown.length = 0;
+
+let defaultOption = document.createElement('option');
+defaultOption.text = 'Choose State';
+
+dropdown.add(defaultOption);
+dropdown.selectedIndex = 0;
+
+const url = 'data/updated_state_vaccinations.json';
+
+const request = new XMLHttpRequest();
+request.open('GET', url, true);
+
+request.onload = function() {
+  if (request.status === 200) {
+    const data = JSON.parse(request.responseText);
+    let option;
+    for (let i = 0; i < data.length; i++) {
+      option = document.createElement('option');
+      option.text = data[i].STATE;
+      option.value = data[i].total_vaccinations;
+      option.value = data[i].people_fully_vaccinated_per_hundred;
+      option.value = data[i].daily_vaccinations;
+      option.value = data[i].POPESTIMATE2019;
+      dropdown.add(option);
+    }
+   } else {
+    // Reached the server, but it returned an error
+  }   
+}
+request.onerror = function() {
+  console.error('An error occurred fetching the JSON from ' + url);
+};
+
+request.send();
+
+/////////////////append data/////////////
+
+var tbody = d3.select("tbody");
+
+// Console.log the weather data from data.js
+console.log(data);
+
+document.forEach((option) => {
+  var row = tbody.append("tr");
+  Object.entries(option).forEach(([key, value]) => {
+    var cell = row.append("td");
+    cell.text(value);
+  });
+});
+
+
+
+//CREATE PLOTS////////////////////////////////// 
 
 //////BAR CHART 1
 var trace1 = {
@@ -225,7 +280,7 @@ var layout4 = {
       yaxis: { title: "Percentage of Administered Vaccines" }
     };
   
-    Plotly.newPlot("bar-plot5", data, layout);
+    Plotly.newPlot("bar-plot6", data, layout);
 
 
 
@@ -338,72 +393,12 @@ geojson = L.geoJson(statesData, {
 }).addTo(myMap);
 
 
-////////DROP DOWN MENU AND STATE SELECTION///////////////////////////////////
 
-var stateinfo = ["Alabama", 4903185, 3291351,23099];
 
-// Use D3 to select the table
-var table = d3.select("table");
-
-// Use d3 to create a bootstrap striped table
-// http://getbootstrap.com/docs/3.3/css/#tables-striped
-table.attr("class", "table table-striped");
-
-// Use D3 to select the table body
-var tbody = d3.select("tbody");
-
-// Append one table row `tr` to the table body
-var row = tbody.append("tr");
-
-// Append one cell for the student name
-row.append("td").text(state[0]);
+////APPEND DATA TO A TABLE////////////
 
 
 
-/////////////////////////////////
-
-
-function optionChanged() {
-  var state = d3.select("#selDataset0").node().value;
-  console.log(state)
-  buildPlot(state);
-};
-
-function getInfo (state){
-  d3.csv("updated_state_vaccinations.csv").then(function(data){
-    console.log(data);
-    let state_name=data.map(d=> d.state_name);
-    let state = []
-    state.forEach(element =>{
-      if(!state_name.includes(element)){
-        state_name.push(element)
-      }
-      else if (state_name.includes(element)){
-        console.log('skip')
-      }
-    })
-    let selector = d3.select("#selData");
-    selector.append("option").text("Alabama");
-    state_name.forEach((i)=>{
-      let option = selector.append("option");
-      option.text(i);
-    });
-
-    let FilteredData=states.filter(d => data.state_name === "Alabama");
-    let population= FilteredData.map(d=>d.POPESTIMATE2019);
-    let total_vaccinations = FilteredData.map(d=>d.people_fully_vaccinated_per_hundred);
-    let daily_vaccinations=FilteredData.map(d=>d.daily_vaccinations_per_million);
-  })
-}
-
-var tbody = d3.select("tbody");
-data.forEach((STATE) => {
-  var row = tbody.append("tr");
-  Object.entries(STATE).forEach(([key, value]) => {
-    var cell = row.append("td");
-    cell.text(value);
-  });
-});
 
 // ////DROPDOWN MENU////////////////////////////
 
