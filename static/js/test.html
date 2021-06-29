@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bind SELECT Element with JSON using JavaScript</title>
+    <style>
+    	select, p, input {
+        	font: 1em Calibri;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <input type="button" 
+            style="margin:10px 0;" 
+                onclick="populateSelect()" 
+                    value="Click to Populate SELECT with JSON" />
+    </p>
+
+    <!--The SELECT element.-->
+    <select id="sel" onchange="show(this)">
+        <option value="">-- Select --</option>
+    </select>
+
+    <p id="msg"></p>
+
+</body>
+
+<script>
+    function populateSelect() {
+        // THE JSON ARRAY.
+        var data = [
+            {
+                "Percentage_Vaccinated": "31.96",
+                "State_Name": "Alabama"
+            },
+            {
+                "Percentage_Vaccinated": "731545",
+                "State_Name": "Alaska"
+            },
+            {
+                "Percentage_Vaccinated": "7278717",
+                "State_Name": "Arizona"
+            },
+            {
+                "Percentage_Vaccinated": "3017804",
+                "State_Name": "Arkansas"
+            }, {
+                "Percentage_Vaccinated": "39512223",
+                "State_Name": "California"
+            }, {
+                "Percentage_Vaccinated": "5758736",
+                "State_Name": "Colorado"
+            }, {
+                "Percentage_Vaccinated": "3565287",
+                "State_Name": "Connecticut"
+            }, {
+                "Percentage_Vaccinated": "973764",
+                "State_Name": "Delaware"
+            }, {
+                "Percentage_Vaccinated": "50.79",
+                "State_Name": "DC"
+            }
+        ];
+
+        var ele = document.getElementById('sel');
+        for (var i = 0; i < data.length; i++) {
+            // POPULATE SELECT ELEMENT WITH JSON.
+            ele.innerHTML = ele.innerHTML +
+                '<option value="' + data[i]['Percentage_Vaccinated'] + '">' + data[i]['State_Name'] + '</option>';
+        }
+    }
+
+    function show(ele) {
+        // GET THE SELECTED VALUE FROM <select> ELEMENT AND SHOW IT.
+        var msg = document.getElementById('msg');
+        msg.innerHTML = 'Selected State: <b>' + ele.options[ele.selectedIndex].text + '</b> </br>' +
+            'Percentage_Vaccinated: <b>' + ele.value + '</b>';
+    }
+</script>
+</html>
